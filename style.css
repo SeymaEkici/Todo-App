@@ -1,0 +1,137 @@
+:root{
+    --light-orange: #FFF6E3;
+    --dark-orange: #ffc343;
+    --light-blue: #BFECFF;
+    --dark-blue: #48c9ff;
+    --light-purple: #b39fff;
+    --dark-purple: #6540ff;
+    --light-pink: #ff7cc9;
+    --dark-pink: #ff60bd;
+}
+
+html{
+    font-family: Pacifico;
+    font-size: 14pt;
+    color: var(--light-purple);
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--light-orange);
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--dark-pink);
+}
+
+.wrapper{
+    gap: 10px;
+}
+
+#todo-input{
+    box-sizing: border-box;
+    padding: 12px 20px;
+    width: 400px;
+    max-width: 100%;
+    background: none;
+    border: 2px solid var(--dark-purple);
+    border-radius: 1000px;
+    font: inherit;
+    color: var(--light-purple);
+    caret-color: var(--dark-blue);
+}
+
+#todo-input:focus{
+    outline: none;
+}
+
+form{
+    position: relative;
+}
+
+#add-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    background-color: var(--light-pink);
+    height: 100%;
+    padding: 0 20px;
+    border: none;
+    font: inherit;
+    font-weight: 600;
+    color: var(--light-orange);
+    cursor: pointer;
+    border-radius: 1000px;
+}
+
+.todo{
+    margin-bottom: 10px;
+    padding: 0 10px;
+    background-color: var(--light-blue);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#todo-list {
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.todo .todo-text{
+    padding: 10px;
+    padding-right: 0;
+    flex-grow: 1;
+    transition: 500ms ease;
+}
+
+.delete-button{
+    padding: 3px;
+    background: none;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.custom-checkbox {
+    cursor: pointer;
+    display: inline-block;
+    transition: 500ms ease;
+}
+
+input[type="checkbox"] {
+    display: none; /*checkboxu gizleme*/
+}
+
+input[type="checkbox"]:checked ~ .todo-text {
+    text-decoration: line-through;
+}
+
+@media(max-width){
+    html{
+        font-size: 8pt;
+    }
+
+    #add-button{
+        position: unset;
+        width: 100%;
+        margin-top: 10px;
+        padding: 15px;
+        height: auto;
+    }
+
+    h1{
+        margin-top: 50px;
+        font-size: 15vw;
+    }
+}
